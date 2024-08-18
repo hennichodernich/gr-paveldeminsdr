@@ -19,9 +19,15 @@
  static const char *__doc_gr_paveldeminsdr_source = R"doc()doc";
 
 
- static const char *__doc_gr_paveldeminsdr_source_source = R"doc()doc";
+ static const char *__doc_gr_paveldeminsdr_source_source_0 = R"doc()doc";
+
+
+ static const char *__doc_gr_paveldeminsdr_source_source_1 = R"doc()doc";
 
 
  static const char *__doc_gr_paveldeminsdr_source_make = R"doc()doc";
+
+
+ static const char *__doc_gr_paveldeminsdr_source_set_center_freqs = R"doc()doc";
 
   

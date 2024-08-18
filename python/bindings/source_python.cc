@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(source.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(ebdbf922958db8e9bf71e97bf6c841b5)                     */
+/* BINDTOOL_HEADER_FILE_HASH(9a293787f3537d71534be8e7ea48d659)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -53,6 +53,20 @@ void bind_source(py::module& m)
         
 
 
+
+
+        
+        .def("set_center_freqs",&source::set_center_freqs,       
+            py::arg("freq1"),
+            py::arg("freq2"),
+            py::arg("freq3"),
+            py::arg("freq4"),
+            py::arg("freq5"),
+            py::arg("freq6"),
+            py::arg("freq7"),
+            py::arg("freq8"),
+            D(source,set_center_freqs)
+        )
 
         ;
 

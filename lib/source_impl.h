@@ -49,6 +49,8 @@ namespace gr {
               gr_vector_const_void_star &input_items,
               gr_vector_void_star &output_items
       );
+      
+      int set_center_freqs(unsigned int freq1, unsigned int freq2, unsigned int freq3, unsigned int freq4, unsigned int freq5, unsigned int freq6, unsigned int freq7, unsigned int freq8);
     };
 
   } // namespace paveldeminsdr

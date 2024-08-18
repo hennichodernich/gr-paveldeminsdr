@@ -33,6 +33,9 @@ namespace gr {
        * creating new instances.
        */
       static sptr make(const std::string &host, unsigned short port, unsigned int samp_rate, unsigned int freq1, unsigned int freq2, unsigned int freq3, unsigned int freq4, unsigned int freq5, unsigned int freq6, unsigned int freq7, unsigned int freq8);
+      
+      virtual int set_center_freqs(unsigned int freq1, unsigned int freq2, unsigned int freq3, unsigned int freq4, unsigned int freq5, unsigned int freq6, unsigned int freq7, unsigned int freq8) = 0;
+      
     };
 
   } // namespace paveldeminsdr

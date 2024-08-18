@@ -138,6 +138,27 @@ namespace gr {
 
       return items_fetched;
     }
+    
+    int source_impl::set_center_freqs(unsigned int freq1, unsigned int freq2, unsigned int freq3, unsigned int freq4, unsigned int freq5, unsigned int freq6, unsigned int freq7, unsigned int freq8)
+    {
+      uint32_t buffer[10] = {0,0,0,0,0,0,0,0,0,0};
+
+      _freqs[0] = _freq_values[0] = freq1;
+      _freqs[1] = _freq_values[1] = freq2;
+      _freqs[2] = _freq_values[2] = freq3;
+      _freqs[3] = _freq_values[3] = freq4;
+      _freqs[4] = _freq_values[4] = freq5;
+      _freqs[5] = _freq_values[5] = freq6;
+      _freqs[6] = _freq_values[6] = freq7;
+      _freqs[7] = _freq_values[7] = freq8;
+      
+      buffer[1] = _rate_value;
+      for(int kk=0; kk<8; kk++)
+        buffer[kk+2] = _freq_values[kk];
+      paveldeminsdr_send_commands( _socket, buffer );
+
+      return 0;
+}
 
   } /* namespace paveldeminsdr */
 } /* namespace gr */

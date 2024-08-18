@@ -5,6 +5,8 @@ category: '[paveldeminsdr]'
 templates:
   imports: import paveldeminsdr
   make: paveldeminsdr.source(${host}, ${port}, ${samp_rate}, ${freq1}, ${freq2}, ${freq3}, ${freq4}, ${freq5}, ${freq6}, ${freq7}, ${freq8})
+  callbacks:
+    - set_center_freqs(${freq1}, ${freq2}, ${freq3}, ${freq4}, ${freq5}, ${freq6}, ${freq7}, ${freq8})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
