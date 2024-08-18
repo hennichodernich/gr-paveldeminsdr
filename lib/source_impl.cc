@@ -46,17 +46,7 @@ namespace gr {
       std::string host_used = "192.168.1.100";
       std::stringstream message;
       struct sockaddr_in addr;
-      uint32_t buffer[10] = {0,0,0,0,0,0,0,0,0,0};
-
-      _freqs[0] = _freq_values[0] = freq1;
-      _freqs[1] = _freq_values[1] = freq2;
-      _freqs[2] = _freq_values[2] = freq3;
-      _freqs[3] = _freq_values[3] = freq4;
-      _freqs[4] = _freq_values[4] = freq5;
-      _freqs[5] = _freq_values[5] = freq6;
-      _freqs[6] = _freq_values[6] = freq7;
-      _freqs[7] = _freq_values[7] = freq8;
-       
+      
       if ( 48000 == samp_rate ) _rate_value = 0;
       else if ( 96000 == samp_rate ) _rate_value = 1;
       else if ( 192000 == samp_rate ) _rate_value = 2;
@@ -93,11 +83,9 @@ namespace gr {
         message << "Could not allocate buffer.";
         throw std::runtime_error( message.str() );
       }
-      
-      buffer[1] = _rate_value;
-      for(int kk=0; kk<8; kk++)
-        buffer[kk+2] = _freq_values[kk];
-        paveldeminsdr_send_commands( _socket, buffer );
+  
+      set_center_freqs(freq1, freq2, freq3, freq4, freq5, freq6, freq7, freq8);
+  
       }
 
     /*
