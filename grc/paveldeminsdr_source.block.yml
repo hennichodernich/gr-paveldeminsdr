@@ -1,0 +1,68 @@
+id: paveldeminsdr_source
+label: source
+category: '[paveldeminsdr]'
+
+templates:
+  imports: import paveldeminsdr
+  make: paveldeminsdr.source(${host}, ${port}, ${samp_rate}, ${freq1}, ${freq2}, ${freq3}, ${freq4}, ${freq5}, ${freq6}, ${freq7}, ${freq8})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+#     * default
+parameters:
+- id: host
+  label: 'Hostname'
+  dtype: string
+  default: '192.168.1.100'
+- id: port
+  label: 'Port'
+  dtype: int
+  default: 1001
+- id: samp_rate
+  label: 'Sampling rate'
+  dtype: int
+  default: 192000
+- id: freq1
+  label: 'Frequency 1'
+  dtype: int
+  default: 1000000
+- id: freq2
+  label: 'Frequency 2'
+  dtype: int
+  default: 1000000
+- id: freq3
+  label: 'Frequency 3'
+  dtype: int
+  default: 1000000
+- id: freq4
+  label: 'Frequency 4'
+  dtype: int
+  default: 1000000
+- id: freq5
+  label: 'Frequency 5'
+  dtype: int
+  default: 1000000
+- id: freq6
+  label: 'Frequency 6'
+  dtype: int
+  default: 1000000
+- id: freq7
+  label: 'Frequency 7'
+  dtype: int
+  default: 1000000
+- id: freq8
+  label: 'Frequency 8'
+  dtype: int
+  default: 1000000
+
+inputs:
+
+outputs:
+- domain: stream
+  dtype: complex
+  multiplicity: 8
+
+file_format: 1
